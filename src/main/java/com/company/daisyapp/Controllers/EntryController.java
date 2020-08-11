@@ -51,7 +51,7 @@ public class EntryController {
 
         response.addHeader("Location", "/entry/" + entry.id);
 
-        
+
         cmd.setResult(resp);
         Logger.getInstance().logCommand(cmd);
         return new ResponseEntity<>(cr, resp);
