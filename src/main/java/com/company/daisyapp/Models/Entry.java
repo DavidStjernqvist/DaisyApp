@@ -42,4 +42,20 @@ public class Entry {
     public LocalDateTime getDate() {
         return date;
     }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
 }
