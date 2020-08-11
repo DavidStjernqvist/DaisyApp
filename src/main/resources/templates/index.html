@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:border-radius="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta charset="UTF-8">
     <title>Contact Application</title>
@@ -9,9 +10,10 @@
 <body class="text-center">
 <h1 style="text-align: center">Diary App</h1>
 <a href="/add" class="btn btn-primary btn-sm">Add Entry</a>
+
 <main role="main" class="inner cover">
     <div th:class="div-main" th:each="entry : ${entriesList}" style="margin: 20px 210px">
-        <span><i><h4 class="cover-heading" th:text="${entry.title}"></h4></i></span>
+       <span><i><h4 class="cover-heading" th:text="${entry.title}"></h4></i></span>
         <p th:text="${entry.date}"></p>
         <img th:class="icon-image" th:src="${entry.imageUrl}" th:width="100px" th:height="100px" alt="">
         <p class="lead" th:text="${entry.text}" style="text-align: center">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
