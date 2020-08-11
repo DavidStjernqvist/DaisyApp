@@ -39,11 +39,7 @@ public class Entry {
     public Entry() {
     }
 
-    public LocalDateTime getCreateDate() {
+    public LocalDateTime getDate() {
         return date;
-    }
-
-    public void setCreateDate(LocalDateTime date) {
-        this.date = date;
     }
 }
