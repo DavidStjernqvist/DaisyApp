@@ -1,6 +1,6 @@
 package com.company.daisyapp.Utils;
 
-import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.*;
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -11,7 +11,7 @@ import javax.sql.DataSource;
 @Configuration
 public class DatabaseConfig {
 
-    @Value("${spring.datasource.url}")
+   /* @Value("${spring.datasource.url}")
     private String dbUrl;
 
     @Bean
@@ -20,5 +20,7 @@ public class DatabaseConfig {
         config.setJdbcUrl(dbUrl);
         return new HikariDataSource(config);
     }
+
+    */
 }
 
