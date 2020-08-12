@@ -22,6 +22,7 @@ public class Entry {
     public Integer id;
     @Column
     public String title;
+
     @Column
     public String text;
 
