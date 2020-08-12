@@ -55,4 +55,13 @@ public class HomeController {
         entryRepository.deleteById(entry.id);
         return "redirect:/";
     }
+    @GetMapping("/add")
+    public String addPage(@ModelAttribute Entry entry, Model model){
+        return "add";
+    }
+    @PostMapping("/add")
+    public String add(Entry entry, Model model, RedirectAttributes redirectAttributes){
+        entryRepository.save(entry);
+        return "redirect:/";
+    }
 }
