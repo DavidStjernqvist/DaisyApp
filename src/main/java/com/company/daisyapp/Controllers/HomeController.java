@@ -33,8 +33,7 @@ public class HomeController {
     @PostMapping("/edit")
     public String edit(Entry entry1, Model model, RedirectAttributes redirectAttributes){
         System.out.println("EDIT");
-        Entry entry = entryRepository.save(entry1);
-
+        Entry entry = entryRepository.getOne(entry1.id);
         return "redirect:/edit/" + entry.id;
     }
     @GetMapping("/delete/{id}")
