@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
 </head>
 <body class="text-center">
-<h1 style="text-align: center">Diary App</h1>
-<a href="/add" class="btn btn-primary btn-sm">Add Entry</a>
+<h1 style="text-align: center; text-decoration: underline">Diary App</h1>
+<a href="/add" class="btn btn-primary btn-sm" style="float: right; margin-right: 300px">Add Entry</a>
+<br>
+<br>
 
 <main role="main" class="inner cover">
     <div th:class="div-main" th:each="entry : ${entriesList}" style="margin: 20px 210px">
