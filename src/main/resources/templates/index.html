@@ -9,7 +9,9 @@
 </head>
 <body class="text-center">
 <h1 style="text-align: center">Diary App</h1>
-<a href="/add" class="btn btn-primary btn-sm">Add Entry</a>
+<a href="/add" class="btn btn-primary btn-sm" style="float: right; margin-right: 300px">Add Entry</a>
+<br>
+<br>
 
 <main role="main" class="inner cover">
     <div th:class="div-main" th:each="entry : ${entriesList}" style="margin: 20px 210px">
