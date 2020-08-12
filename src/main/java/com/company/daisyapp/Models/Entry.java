@@ -26,8 +26,8 @@ public class Entry {
     public String text;
 
     @Column
-    @CreationTimestamp
-    private LocalDateTime date;
+    private String date;
+
     @Column
     public String imageUrl;
 
@@ -52,7 +52,7 @@ public class Entry {
         this.text = text;
     }
 
-    public void setDate(LocalDateTime date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -60,7 +60,7 @@ public class Entry {
         this.imageUrl = imageUrl;
     }
 
-    public LocalDateTime getDate() {
+    public String getDate() {
         return date;
     }
 
