@@ -33,6 +33,7 @@ public class HomeController {
     @PostMapping("/edit")
     public String edit(Entry entry1, Model model, RedirectAttributes redirectAttributes){
         System.out.println("EDIT");
+      
         Entry entry = entryRepository.getOne(entry1.getId());
         entry.setText(entry1.getText());
         entry.setImageUrl(entry1.getImageUrl());
