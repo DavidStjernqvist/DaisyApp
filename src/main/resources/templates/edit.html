@@ -6,11 +6,12 @@
     <title>Edit entry</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
 </head>
-<body>
-<h1 style="text-align: center">Edit entry</h1>
+<body th:class="text-center">
+
+<h1 style="text-align: center" th:id="editEntry">Edit entry</h1>
 <a href="/" class="btn btn-primary btn-sm">Back</a>
 
-<form method="post" th:object="${entry}" th:action="@{/edit}">
+<form method="post" th:object="${entry}" th:action="@{/edit}" >
 
     <div class="form-group">
 
@@ -29,11 +30,57 @@
 
     <div class="form-group">
         <label for="">Text:</label>
-        <input type="text" th:field="*{text}" class="form-control" ></input>
+        <textarea rows="4" cols="50" type="text" th:field="*{text}" class="form-control" style="resize: none"></textarea>
     </div>
 
     <button class="btn btn-danger mb-5">Edit</button>
+    <a href="#preview" class="btn btn-success mb-5">Preview your changes</a>
 </form>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<main role="main" class="inner cover" th:id="preview">
+    <div th:class="div-main" style="margin: 20px 210px">
+        <span><i><h4 class="cover-heading" th:text="${entry.title}"></h4></i></span>
+        <p th:text="${entry.date}"></p>
+        <img th:class="icon-image" th:src="${entry.imageUrl}" th:width="100px" th:height="100px" alt="">
+        <p class="lead" th:text="${entry.text}" style="text-align: center">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+        <a href="#editEntry" class="btn btn-success btn-sm">Edit</a>
+        <hr th:class="my-4" style="width: 18rem;" >
+    </div>
+</main>
 
 </body>
 </html>
