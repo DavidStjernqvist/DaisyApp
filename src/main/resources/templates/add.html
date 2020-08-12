@@ -3,26 +3,34 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Contact Application</title>
+    <title>Add entry</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-<h1 style="text-align: center">Add Entry</h1>
 
-<form method="post" th:object="${entry}" th:action="@{/add}">
+<body th:class="text-center">
+
+<h1 style="text-align: center" th:id="addEntry">Edit entry</h1>
+<a href="/" class="btn btn-primary btn-sm">Back</a>
+
+<form method="post" th:object="${entry}" th:action="@{/add}" >
+
+    <div class="form-group">
+
+        <input hidden type="text" class="form-control" th:field="*{id}">
+
+    </div>
     <div class="form-group">
         <label for="" class="margin-l">Title:</label>
         <input type="text" class="form-control" th:field="*{title}" placeholder="Title">
+    </div>
 
-    </div>
     <div class="form-group">
-        <label for="" class="margin-l">Text:</label>
-        <textarea class="form-control" th:field="*{text}" placeholder="Text" rows="4" style="resize: none"/>
+        <label for="">Image:</label>
+        <input type="text" class="form-control" th:field="*{imageUrl}" placeholder="Image url">
     </div>
+
     <div class="form-group">
-        <label for="" tclass="margin-l">ImageURL</label>
-        <input type="text" class="form-control" th:field="*{imageUrl}" placeholder="ImageURL">
     </div>
     <button class="btn btn-danger btn-sm">Add</button>
     <a href="/" class="btn btn-primary btn-sm">Back</a>
@@ -30,3 +38,8 @@
 
 </body>
 </html>
+        <label for="">Text:</label>
+        <textarea rows="4" cols="50" type="text" th:field="*{text}" class="form-control" style="resize: none"></textarea>
+    </div>
+    <button class="btn btn-danger mb-5">Add</button>
+</form>
