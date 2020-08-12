@@ -35,13 +35,14 @@ public class HomeController {
         System.out.println("EDIT");
       
         Entry entry = entryRepository.getOne(entry1.getId());
+        entry.setId(entry1.getId());
         entry.setText(entry1.getText());
         entry.setImageUrl(entry1.getImageUrl());
         entry.setTitle(entry1.getTitle());
 
         entryRepository.save(entry);
 
-        return "redirect:/";
+        return "redirect:/edit/" + entry.getId();
     }
     @GetMapping("/delete/{id}")
     public String deleteEntry(@PathVariable Integer id, Model model){
