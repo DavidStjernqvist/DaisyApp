@@ -23,7 +23,7 @@ public class Entry {
     @Column
     public String title;
 
-    @Column
+    @Column(columnDefinition = "TEXT")
     public String text;
 
     @Column
