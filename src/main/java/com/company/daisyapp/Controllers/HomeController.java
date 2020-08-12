@@ -2,6 +2,7 @@ package com.company.daisyapp.Controllers;
 
 import com.company.daisyapp.Models.Entry;
 import com.company.daisyapp.Repositories.EntryRepository;
+import com.company.daisyapp.Utils.DateFormater;
 import org.dom4j.rule.Mode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,12 +10,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.time.LocalDateTime;
 import java.util.*;
 @Controller
 public class HomeController {
 
     @Autowired
     EntryRepository entryRepository;
+
+    DateFormater dateFormater = new DateFormater();
 
     @GetMapping("/")
     public String index(Model model){
@@ -61,6 +65,9 @@ public class HomeController {
     }
     @PostMapping("/add")
     public String add(Entry entry, Model model, RedirectAttributes redirectAttributes){
+
+        String dateString = dateFormater.formatDate();
+        entry.setDate(dateString);
         entryRepository.save(entry);
         return "redirect:/";
     }
